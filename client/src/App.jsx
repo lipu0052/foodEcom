@@ -1,11 +1,20 @@
-import Nav from './comp/Nav';
+import React, { useState } from "react";
 
-function App() {
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Nav from "./comp/Nav";
+
+const App = () => {
   return (
-    <div className="App">
+    <div className="min-h-screen">
+      <BrowserRouter>
       <Nav />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
 export default App;
